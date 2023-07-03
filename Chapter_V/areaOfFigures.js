@@ -23,7 +23,7 @@ function areaOfFigures(input){
         area = num1 * num2;
     }
     else if(type === "circle"){
-        area = Math.PI * num1 * num1;
+        area = Math.PI * (num1 * num1);
     }
     else if(type === "triangle"){
         area = (num1 * num2) / 2;
