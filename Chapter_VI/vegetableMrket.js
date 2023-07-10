@@ -1,3 +1,5 @@
+// Ex. FROM Chapter IV !
+
 function vegetableMarket(input){
     let vegetablesPricePerKg = Number(input[0]);
     let fruitsPricePerKg = Number(input[1]);
