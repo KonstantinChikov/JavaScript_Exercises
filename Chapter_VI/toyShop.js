@@ -26,32 +26,16 @@ function toyShop(input){
     let toyCount = puzzles + dolls + bears + minions + trucks;
 
     if(toyCount >= 50){
-         let priceWithDiscount = price - (price * 0.25); // -25%
-
-         let priceAfterRentAndDiscount = priceWithDiscount - (priceWithDiscount * 0.10); // -10%
-         let totalPrice = priceAfterRentAndDiscount - tripPrice;
-         totalPrice = Math.abs(totalPrice);
-     
-         if(totalPrice > tripPrice){
-             console.log(`Yes! ${(totalPrice).toFixed(2)} lv left.`);
-         }else{
-             console.log(`Not enough money! ${(totalPrice).toFixed(2)} lv needed.`);
-         }
+        price = price * 0.75;
     }
-    else if(toyCount < 50){
+    price = price * 0.90;
 
-        let priceAfterRent = price - (price * 0.10); // -10%
-        let totalPrice = priceAfterRent - tripPrice;
-        totalPrice = Math.abs(totalPrice);
-
-        if(totalPrice > tripPrice){
-            console.log(`Yes! ${(totalPrice).toFixed(2)} lv left.`);
-        }else{
-            console.log(`Not enough money! ${(totalPrice).toFixed(2)} lv needed.`);
-        }
+    if(price >= tripPrice){
+        console.log(`Yes! ${(price - tripPrice).toFixed(2)} lv left.`);
+    }else{
+        console.log(`Not enough money! ${(tripPrice - price).toFixed(2)} lv needed.`);
     }
 
 }
 
-toyShop(["320", "8", "2", "5", "5", "1"])
-//   70/100 in judge!       
+toyShop(["40.8", "20", "25", "30", "50", "10"])    

@@ -11,23 +11,18 @@
 function worldSwimmingRecord(input){
     let Record = Number(input[0]);
     let distance = Number(input[1]);
-    let timeForAMeter = Number(input[2]);
+    let timeForOneMeter = Number(input[2]);
 
-    let timeWithoutResistance = distance * timeForAMeter;
-    let resistance = (distance / 15) * 12.5;
+    let timeWithoutResistance = distance * timeForOneMeter;
+    let resistance = Math.floor(distance / 15) * 12.5;
     let totalTime = timeWithoutResistance + resistance;
 
-    if(Record < totalTime){
-        let leftoverTime = totalTime - Record;
-        let trunc = Math.trunc(leftoverTime);
-        console.log(`No, he failed! He was ${trunc.toFixed(2)} seconds slower.`);
+    if(Record > totalTime){
+        console.log(`Yes, he succeeded! The new world record is ${totalTime.toFixed(2)} seconds.`);
     }else{
-        let trunc = Math.trunc(totalTime);
-        console.log(`Yes, he succeeded! The new world record is ${trunc.toFixed(2)} seconds.`);
+        console.log(`No, he failed! He was ${(totalTime - Record).toFixed(2)} seconds slower.`);   
     }
 }
 
 worldSwimmingRecord(["55555.67", "3017", "5.03"])
 worldSwimmingRecord(["10464", "1500", "20"])
-
-//   20/100 in judge!  
